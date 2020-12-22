@@ -383,7 +383,7 @@ object V2rayConfigUtil {
             routingUserRule(app.defaultDPreference.getPrefString(AppConfig.PREF_V2RAY_ROUTING_BLOCKED, ""), AppConfig.TAG_BLOCKED, v2rayConfig)
 
             v2rayConfig.routing.domainStrategy = app.defaultDPreference.getPrefString(SettingsActivity.PREF_ROUTING_DOMAIN_STRATEGY, "IPIfNonMatch")
-            val routingMode = app.defaultDPreference.getPrefString(SettingsActivity.PREF_ROUTING_MODE, "0")
+            val routingMode = app.defaultDPreference.getPrefString(SettingsActivity.PREF_ROUTING_MODE, "3")
 
             // Hardcode googleapis.cn
             val googleapisRoute = V2rayConfig.RoutingBean.RulesBean(
@@ -520,7 +520,7 @@ object V2rayConfigUtil {
                 servers.add(V2rayConfig.DnsBean.ServersBean(domesticDns.first(), 53, dirDomain))
             }
 
-            val routingMode = app.defaultDPreference.getPrefString(SettingsActivity.PREF_ROUTING_MODE, "0")
+            val routingMode = app.defaultDPreference.getPrefString(SettingsActivity.PREF_ROUTING_MODE, "3")
             if (routingMode == "2" || routingMode == "3") {
                 servers.add(V2rayConfig.DnsBean.ServersBean(domesticDns.first(), 53, arrayListOf("geosite:cn")))
             }
