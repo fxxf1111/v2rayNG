@@ -94,7 +94,7 @@ class V2RayVpnService : VpnService(), ServiceControl {
         // Configure a builder while parsing the parameters.
         val builder = Builder()
         val enableLocalDns = settingsStorage?.decodeBool(AppConfig.PREF_LOCAL_DNS_ENABLED) ?: false
-        val routingMode = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_MODE) ?: "0"
+        val routingMode = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_MODE) ?: "3"
 
         parameters.split(" ")
                 .map { it.split(",") }

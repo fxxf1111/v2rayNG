@@ -148,7 +148,7 @@ object V2rayConfigUtil {
 
             v2rayConfig.routing.domainStrategy = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_DOMAIN_STRATEGY)
                     ?: "IPIfNonMatch"
-            val routingMode = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_MODE) ?: "0"
+            val routingMode = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_MODE) ?: "3"
 
             // Hardcode googleapis.cn
             val googleapisRoute = V2rayConfig.RoutingBean.RulesBean(
@@ -334,7 +334,7 @@ object V2rayConfigUtil {
             // domestic DNS
             val directDomain = userRule2Domian(settingsStorage?.decodeString(AppConfig.PREF_V2RAY_ROUTING_DIRECT)
                     ?: "")
-            val routingMode = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_MODE) ?: "0"
+            val routingMode = settingsStorage?.decodeString(AppConfig.PREF_ROUTING_MODE) ?: "3"
             if (directDomain.size > 0 || routingMode == "2" || routingMode == "3") {
                 val domesticDns = Utils.getDomesticDnsServers()
                 val geositeCn = arrayListOf("geosite:cn")
